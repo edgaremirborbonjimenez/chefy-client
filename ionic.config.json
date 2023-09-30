@@ -1,0 +1,7 @@
+{
+  "name": "chefy-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
