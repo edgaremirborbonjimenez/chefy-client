@@ -1,0 +1,75 @@
+*{
+    color: #818e9b;
+}
+
+.container{
+    background-color: white;
+    height: 300px;
+   /* width: 50%;*/
+    border-radius: 20px;
+}
+#total{
+    font-size: 400%;
+    font-weight: bold;
+    display: inline;
+    float: right;
+    margin-right: 20%;
+}
+
+#id{
+    position: relative;
+    margin-left: 5%;
+    margin-top: 100px;
+    font-size: 400%;
+    font-weight: bold;
+    display: inline;
+}
+
+.items{
+    width: 50%;
+    margin-left: 12%;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#item{
+    font-weight: bold;
+}
+
+#price{
+    margin-left: 26%;
+}
+
+#sa{
+    margin-left: 15%;
+    text-decoration: underline;
+}
+
+.btn{
+    background-color: #818e9b;
+    color: white;
+    padding: 20px 30px 20px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    float: right;
+    margin-right: 15%;
+}
+
+.container2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#totalPrice{
+    position: relative;
+    left: 6%;
+    bottom: 50px;
+    font-size: 350%;
+    font-weight: bold;
+    
+}
+
+.plus{
+    
+
+}
