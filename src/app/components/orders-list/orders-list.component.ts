@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderCardLiComponent } from '../order-card-li/order-card-li.component';
 import { OrdersListService } from './orders-list.service'
-import { Order } from 'src/app/interfaces/Order';
+import { Order } from 'src/app/components/interfaces/OrderImp';
 
 @Component({
   selector: 'app-orders-list',
@@ -24,8 +24,10 @@ export class OrdersListComponent  implements OnInit {
 
     this.orderListService.getOrders()
     .subscribe({
-      next: res=>{
-        console.log(res);
+      next: (response:Order[])=>  {
+
+        this.orders = response;
+
       }
     })
 

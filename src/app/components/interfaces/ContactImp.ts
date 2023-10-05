@@ -1,4 +1,4 @@
-import { Address } from "./Address";
+import { Address } from "./AddressImp";
 
 export interface Contact{
     _id?: string;
