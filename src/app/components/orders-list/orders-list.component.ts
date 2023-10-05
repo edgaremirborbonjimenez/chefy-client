@@ -13,6 +13,7 @@ import { OrderImp } from 'src/app/components/interfaces/OrderImp';
 export class OrdersListComponent  implements OnInit {
 
   orders:OrderImp[] = [];
+  i:number = 1;
 
   constructor( private orderListService: OrdersListService) { }
 
@@ -22,9 +23,9 @@ export class OrdersListComponent  implements OnInit {
 
   getOrders(){
 
-    this.orderListService.getOrders()
+    this.orderListService.getOrders('1','3','In Process')
     .subscribe({
-      next: (response:Order[])=>  {
+      next: (response:OrderImp[])=>  {
 
         this.orders = response;
 

@@ -13,6 +13,7 @@ import { Order } from '../classes/Order';
 export class OrderCardLiComponent  implements OnInit {
 
   @Input() order: Order;
+  @Input() nOrder:number;
 
   constructor() { }
 
