@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Order } from 'src/app/interfaces/Order';
+import { OrderImp } from 'src/app/components/interfaces/OrderImp';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { SearchOrdersParamsDTO } from '../order-request-dto/search-orders';
@@ -15,12 +15,12 @@ export class OrdersService {
     private http: HttpClient
   ) { }
 
-  getOrders(params: SearchOrdersParamsDTO):Observable<Order[]>{
-    return this.http.get<Order[]>(`${environment.apiUrl}/orders`, { params: <any> params});
+  getOrders(params: SearchOrdersParamsDTO):Observable<OrderImp[]>{
+    return this.http.get<OrderImp[]>(`${environment.apiUrl}/orders`, { params: <any> params});
   }
 
   
-  updateOrder(id: string, order: UpdateOrderDTO): Observable<Order>{
-    return this.http.patch<Order>(`${environment.apiUrl}/orders/${id}`, {param: <any> order});
+  updateOrder(id: string, order: UpdateOrderDTO): Observable<OrderImp>{
+    return this.http.patch<OrderImp>(`${environment.apiUrl}/orders/${id}`, {param: <any> order});
   }
 }

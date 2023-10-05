@@ -8,7 +8,6 @@ export const routes: Routes = [
   },
   {
     path: 'orders',
-    loadComponent: () => import('./orders/orders.page').then( m => m.OrdersPage)
-  },
-
+    loadComponent: () => import('./orders/pages/all-orders/all-orders.page').then( m => m.AllOrdersPage)
+  }
 ];
