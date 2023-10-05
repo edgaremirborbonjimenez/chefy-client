@@ -8,6 +8,8 @@ import { environment } from './environments/environment';
 
 
 import { MainComponent } from './app/components/main/main.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 
 if (environment.production) {
   enableProdMode();
@@ -18,5 +20,6 @@ bootstrapApplication(MainComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
     provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi())
   ],
 });
