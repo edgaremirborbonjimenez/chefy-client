@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderCardLiComponent } from '../order-card-li/order-card-li.component';
 import { OrdersListService } from './orders-list.service'
-import { Order } from 'src/app/components/interfaces/OrderImp';
+import { OrderImp } from 'src/app/components/interfaces/OrderImp';
 
 @Component({
   selector: 'app-orders-list',
@@ -12,7 +12,7 @@ import { Order } from 'src/app/components/interfaces/OrderImp';
 })
 export class OrdersListComponent  implements OnInit {
 
-  orders:Order[] = [];
+  orders:OrderImp[] = [];
 
   constructor( private orderListService: OrdersListService) { }
 
