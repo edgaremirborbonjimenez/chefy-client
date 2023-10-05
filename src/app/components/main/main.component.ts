@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink, RouterLinkActive, CommonModule,RouterModule],
+  imports: [IonicModule, RouterLink, RouterLinkActive, CommonModule,RouterModule, SideBarComponent],
 })
 export class MainComponent  implements OnInit {
 /*
