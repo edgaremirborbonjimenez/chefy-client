@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { Order } from '../classes/Order';
+
 
 @Component({
   selector: 'app-order-card-li',
@@ -9,6 +11,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule,]
 })
 export class OrderCardLiComponent  implements OnInit {
+
+  @Input() order: Order;
 
   constructor() { }
 
