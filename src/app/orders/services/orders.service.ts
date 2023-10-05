@@ -20,7 +20,7 @@ export class OrdersService {
   }
 
   
-  updateOrder(order: UpdateOrderDTO): Observable<Order>{
-    return this.http.patch<Order>(`${environment.apiUrl}/orders`, {param: <any> order});
+  updateOrder(id: string, order: UpdateOrderDTO): Observable<Order>{
+    return this.http.patch<Order>(`${environment.apiUrl}/orders/${id}`, {param: <any> order});
   }
 }
