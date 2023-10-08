@@ -1,6 +1,7 @@
 export interface Dishes{
 
     name:string;
-    quantity:number
+    quantity:number;
+    price:number;
 
 }

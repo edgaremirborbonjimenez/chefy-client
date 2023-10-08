@@ -22,7 +22,7 @@ export class OrdersListComponent  implements OnInit {
   constructor( private orderListService: OrdersListService) { }
 
   ngOnInit() {
-   // this.getOrders();
+    this.getOrders();
   }
 
   getOrders(){
@@ -32,7 +32,6 @@ export class OrdersListComponent  implements OnInit {
       next: (response:Order[])=>  {
 
         this.orders = response;
-
       }
     })
 

@@ -6,5 +6,5 @@ export interface Contact{
     updatedAt?: Date;
     name:string;
     phoneNumber:string;
-    address: Address
+    address?: Address
 }
