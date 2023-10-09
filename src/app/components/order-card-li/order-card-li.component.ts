@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { Order } from '../classes/Order';
 import { CommonModule } from '@angular/common';
+import { OrderImp } from '../interfaces/OrderImp';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class OrderCardLiComponent  implements OnInit {
 
-  @Input() order: Order;
+  @Input() order: OrderImp;
   @Input() nOrder:number;
   total:number=0;
 

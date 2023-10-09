@@ -3,7 +3,6 @@ import { OrderCardLiComponent } from '../order-card-li/order-card-li.component';
 import { OrdersListService } from './orders-list.service'
 import { OrderImp } from 'src/app/components/interfaces/OrderImp';
 import { CommonModule } from '@angular/common';
-import { Order } from '../classes/Order';
 
 @Component({
   selector: 'app-orders-list',
@@ -15,7 +14,7 @@ import { Order } from '../classes/Order';
 export class OrdersListComponent  implements OnInit {
 
   //orders:OrderImp[] = [];
-  orders:Order[] = [];
+  orders:OrderImp[];
 
   i:number = 1;
 
@@ -29,9 +28,10 @@ export class OrdersListComponent  implements OnInit {
 
     this.orderListService.getOrders('1','3','In Process')
     .subscribe({
-      next: (response:Order[])=>  {
+      next: (response:OrderImp[])=>  {
 
         this.orders = response;
+        console.log(this.orders);
       }
     })
 
