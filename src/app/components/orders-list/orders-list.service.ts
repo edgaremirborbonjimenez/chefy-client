@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { OrderImp } from 'src/app/components/interfaces/OrderImp';
-import { Order } from '../classes/Order';
 
 
 
@@ -15,8 +14,8 @@ export class OrdersListService {
 
   constructor(private http : HttpClient) { }
 
-getOrders(page:string,count:string,status:string):Observable<Order[]>{
-  return this.http.get<Order[]>(`${this.BASE_URL}/orders?page=${page}&count=${count}&status=${status}`);  
+getOrders(page:string,count:string,status:string):Observable<OrderImp[]>{
+  return this.http.get<OrderImp[]>(`${this.BASE_URL}/orders?page=${page}&count=${count}&status=${status}`);  
 }
 
 }
