@@ -11,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class OrderHistoryPage implements OnInit {
+  title: string = "Order History";
 
   constructor() { }
 

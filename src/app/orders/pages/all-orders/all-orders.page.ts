@@ -9,9 +9,10 @@ import { OrdersListComponent } from 'src/app/components/orders-list/orders-list.
   templateUrl: './all-orders.page.html',
   styleUrls: ['./all-orders.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule,OrdersListComponent]
+  imports: [IonicModule, CommonModule, FormsModule, OrdersListComponent]
 })
 export class AllOrdersPage implements OnInit {
+  title: string = "Orders";
 
   constructor() { }
 
