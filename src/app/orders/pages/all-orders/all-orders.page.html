@@ -1,10 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>all-orders</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="side-bar"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <app-orders-list></app-orders-list>
 </ion-content>
