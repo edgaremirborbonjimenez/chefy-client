@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { HeaderContentImp } from '../interfaces/HeaderContentImp';
-import { HeaderContent } from '../classes/HeaderContent';
+import { Timestamp } from 'rxjs';
+import { HeaderDetailOrderService } from './header-detail-order.service';
 
 @Component({
   selector: 'app-header-detail-order',
@@ -12,11 +13,19 @@ import { HeaderContent } from '../classes/HeaderContent';
 })
 export class HeaderDetailOrderComponent  implements OnInit {
 
-@Input() headerData:HeaderContent;
+  @Input() numOrder: number;
+  @Input() date:Date;
+  @Input() total:number;
+  dateFormated:String;
 
-  constructor() { }
+  constructor(private headerDetailOrderService: HeaderDetailOrderService) { }
 
   ngOnInit() {
+    this.formatDate();
+  }
+
+  formatDate(){
+    this.dateFormated = this.headerDetailOrderService.formatDate(this.date);
   }
 
 }
