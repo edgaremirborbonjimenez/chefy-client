@@ -3,26 +3,36 @@ import { HeaderDetailOrderComponent } from '../header-detail-order/header-detail
 import { DetailsOrderContainerService } from './details-order-container.service';
 import { OrderImp } from '../interfaces/OrderImp';
 import { HeaderContentImp } from '../interfaces/HeaderContentImp';
-import { HeaderContent } from '../classes/HeaderContent';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-details-order-container',
   templateUrl: './details-order-container.component.html',
   styleUrls: ['./details-order-container.component.scss'],
   standalone: true,
-  imports: [HeaderDetailOrderComponent]
+  imports: [HeaderDetailOrderComponent,CommonModule]
 })
 export class DetailsOrderContainerComponent  implements OnInit {
 
-  headerContent:HeaderContent;
+  order:OrderImp;
 
   constructor(private detailsOrderContainerService:DetailsOrderContainerService) { }
 
-  ngOnInit() {}
-
-  getOrders(){
-    this.headerContent = this.detailsOrderContainerService.getHeaderData();
-    console.log(this.headerContent);
+  ngOnInit() {
+    this.getOrder();
   }
+
+  getOrder(){
+    
+    this.detailsOrderContainerService.getOrderByID('482e7a44-f81a-4a02-8018-98f835bd3225')
+    .subscribe({
+      next: (response:OrderImp)=>  {
+        console.log(response.createdAt);
+        this.order = response;
+
+      }
+    })
+  }
+
 
 }

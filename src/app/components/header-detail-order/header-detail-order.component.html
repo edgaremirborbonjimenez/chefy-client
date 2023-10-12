@@ -1,1 +1,22 @@
-Header
+<ion-header>
+   <ion-toolbar>
+      <ion-grid >
+         <ion-row >
+            <ion-col class="numOrder">
+               #{{numOrder}} 
+            </ion-col>
+            <ion-col id="num">Order #{{numOrder}}</ion-col>
+            <ion-col id="num">Date {{dateFormated}}</ion-col>
+            <ion-col id="num">
+               Total Amount<br>
+               ${{total}}
+            </ion-col>
+         </ion-row>
+
+      </ion-grid>
+   </ion-toolbar>
+<ion-header>
+
+<!--<div style="background-color: aqua;">
+   {{numOrder}}  {{date}}  {{total}}
+</div>-->

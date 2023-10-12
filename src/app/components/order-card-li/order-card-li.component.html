@@ -16,7 +16,14 @@
               <ion-col>
               <ion-list>
                 <ion-item *ngFor="let dish of order.dishes;" >
-                  {{dish.quantity}} {{dish.name}} -{{dish.price}} <ion-label slot="end">See all</ion-label>
+                  {{dish.quantity}} {{dish.name}} -{{dish.price}} 
+                  <ion-button slot="end" color="medium" (click)="goOrderInfo()">See all</ion-button>
+                   <!-- <ion-toolbar>
+                      <ion-buttons>
+                        <ion-button slot="end" (click)="goOrderInfo()">See all</ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                    -->
                 </ion-item>
              </ion-list>
             </ion-col>

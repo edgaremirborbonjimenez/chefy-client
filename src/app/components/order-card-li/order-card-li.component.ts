@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { OrderImp } from '../interfaces/OrderImp';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class OrderCardLiComponent  implements OnInit {
   @Input() nOrder:number;
   total:number=0;
 
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit() {
     this.calculateTotal();
@@ -28,6 +29,12 @@ export class OrderCardLiComponent  implements OnInit {
       let p =  +dish.price  ;
       this.total+=(p*dish.quantity);
   }
+  }
+
+  goOrderInfo(){
+this.router.navigate(['orders/info','482e7a44-f81a-4a02-8018-98f835bd3225']);
+    
+
   }
 
 }

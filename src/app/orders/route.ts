@@ -4,6 +4,6 @@ import { OrderInfoPage } from "./pages/order-info/order-info.page";
 
 export default[
     {path:'',component:AllOrdersPage},
-    {path:'info',component:OrderInfoPage},
+    {path:'info/:id',component:OrderInfoPage},
     {path:'history',component:OrderHistoryPage},
 ]

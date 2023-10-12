@@ -20,6 +20,7 @@ bootstrapApplication(MainComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
     provideRouter(routes),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    
   ],
 });
