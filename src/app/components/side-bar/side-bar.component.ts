@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
+import { RouteReuseStrategy, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
   standalone: true,
-  imports: [IonicModule]
+  imports: [IonicModule, RouterLink]
 })
 export class SideBarComponent  implements OnInit {
-  pageTitle: string = "";
 
-  constructor(private route: ActivatedRoute) {
-    this.pageTitle = this.getCurrentPageTitle();
-  }
+  constructor(private router: Router) {}
 
-  getCurrentPageTitle(): string {
-    const routeSnapshot = this.route.snapshot;
-
-    if (routeSnapshot.data && routeSnapshot.data["title"]) {
-      return routeSnapshot.data["title"];
-    }
-
-    return "Default title";
+  navigate() {
+    this.router.navigate(["/orders"])
   }
 
   ngOnInit() {}
