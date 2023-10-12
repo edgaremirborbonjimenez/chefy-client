@@ -17,7 +17,7 @@
               <ion-list>
                 <ion-item *ngFor="let dish of order.dishes;" >
                   {{dish.quantity}} {{dish.name}} -{{dish.price}} 
-                  <ion-button slot="end" color="medium" (click)="goOrderInfo()">See all</ion-button>
+                  <!--<ion-button slot="end" color="medium" (click)="goOrderInfo()">See all</ion-button>-->
                    <!-- <ion-toolbar>
                       <ion-buttons>
                         <ion-button slot="end" (click)="goOrderInfo()">See all</ion-button>
@@ -31,7 +31,7 @@
               <ion-card-title class="total">Total</ion-card-title>
               <ion-card-title class="total">${{total}}</ion-card-title>
               <ion-buttons>
-              <ion-button color="light" id="btn" fill="solid">
+              <ion-button (click)="goOrderInfo()" color="light" id="btn" fill="solid">
                 <label>Open</label>
                 <ion-icon name="add-outline"></ion-icon>
               </ion-button>

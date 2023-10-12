@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { OrderImp } from '../interfaces/OrderImp';
 import { HeaderContentImp } from '../interfaces/HeaderContentImp';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -10,14 +11,13 @@ import { HeaderContentImp } from '../interfaces/HeaderContentImp';
 })
 export class DetailsOrderContainerService {
 
-  BASE_URL: string = 'http://localhost:3000';
   order:OrderImp;
 
   constructor(private http : HttpClient) { }
 
 
 getOrderByID(id:string): Observable<OrderImp>{
-    return  this.http.get<OrderImp>(`${this.BASE_URL}/orders/${id}`);  
+    return  this.http.get<OrderImp>(`${environment.apiUrl}/orders/${id}`);  
   }
 
 }

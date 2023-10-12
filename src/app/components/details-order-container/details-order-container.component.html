@@ -1,1 +1,15 @@
-<app-header-detail-order [numOrder]="1" [date]="this.order.createdAt" [total]="270" *ngIf="order"></app-header-detail-order>
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <app-header-detail-order [numOrder]="1" [date]="this.order.createdAt" [total]="270" *ngIf="order"></app-header-detail-order>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <app-detail-dish-card></app-detail-dish-card>
+        </ion-col>
+        <ion-col>
+            
+        </ion-col>
+    </ion-row>
+</ion-grid>

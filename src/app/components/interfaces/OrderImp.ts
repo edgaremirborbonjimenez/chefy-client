@@ -1,6 +1,6 @@
 import { Timestamp } from "rxjs";
 import { Contact } from "./ContactImp";
-import { Dishes } from "./DishesImp";
+import { DishImp } from "./DishImp";
 
 export interface OrderImp{
     _id: string;
@@ -8,7 +8,7 @@ export interface OrderImp{
     updatedAt: Date;
     status: string;
     contact: Contact;
-    dishes: Dishes[];
+    dishes: DishImp[];
 
 
 

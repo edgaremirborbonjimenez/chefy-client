@@ -1,4 +1,4 @@
-export interface Dishes{
+export interface DishImp{
 
     name:string;
     quantity:number;
