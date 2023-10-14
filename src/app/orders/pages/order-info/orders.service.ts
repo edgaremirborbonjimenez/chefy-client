@@ -21,6 +21,7 @@ export class OrdersService {
 
   
   updateOrder(id: string, order: UpdateOrderDTO): Observable<OrderImp>{
-    return this.http.patch<OrderImp>(`${environment.apiUrl}/orders/${id}`, {param: <any> order});
+    console.log(id);
+    return this.http.patch<OrderImp>(`${environment.apiUrl}/orders/${id}`, order);
   }
 }

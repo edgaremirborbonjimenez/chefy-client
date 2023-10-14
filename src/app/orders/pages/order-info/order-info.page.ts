@@ -29,12 +29,14 @@ export class OrderInfoPage implements OnInit {
   }
 
   acceptOrder(){
+    console.log(this.idOrder)
     this.orderService.updateOrder(this.idOrder,new UpdateOrderDTO('Accepted'));
     this.goToOrder();
 
   }
 
   rejectOrder(){
+    console.log(typeof this.idOrder)
     this.orderService.updateOrder(this.idOrder,new UpdateOrderDTO('Rejected'));
     this.goToOrder();
   }
