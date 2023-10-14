@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { DetailDishCardComponent } from '../detail-dish-card/detail-dish-card.component';
 import { ContactInfoComponent } from '../contact-info/contact-info.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details-order-container',
@@ -19,11 +20,15 @@ export class DetailsOrderContainerComponent  implements OnInit {
 
   @Output() idOrderEventEmit = new EventEmitter<string>();
   order:OrderImp;
+  idOrder:string;
 
-  constructor(private detailsOrderContainerService:DetailsOrderContainerService) { }
+  constructor(private detailsOrderContainerService:DetailsOrderContainerService,private activedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.idOrder = this.activedRoute.snapshot.params['id'];
+    console.log(this.idOrder);
     this.getOrder();
+
   }
 
   passIdOrder(){
@@ -31,8 +36,8 @@ export class DetailsOrderContainerComponent  implements OnInit {
   }
 
   getOrder(){
-    
-    this.detailsOrderContainerService.getOrderByID('482e7a44-f81a-4a02-8018-98f835bd3225')
+    console.log(this.idOrder);
+    this.detailsOrderContainerService.getOrderByID(this.idOrder)
     .subscribe({
       next: (response:OrderImp)=>  {        
         this.order = response;
