@@ -1,4 +1,4 @@
-export interface Address{
+export interface AddressImp{
     _id?: string;
     createdAt?: Date;
     updatedAt?: Date;

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { OrderImp } from '../interfaces/OrderImp';
+import { OrderImp } from '../../types/OrderImp';
 import { Router } from '@angular/router';
 
 
@@ -32,7 +32,7 @@ export class OrderCardLiComponent  implements OnInit {
   }
 
   goOrderInfo(){
-this.router.navigate(['orders/info','482e7a44-f81a-4a02-8018-98f835bd3225']);
+this.router.navigate(['orders/info',this.order.id]);
     
 
   }

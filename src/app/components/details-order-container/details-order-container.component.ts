@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { HeaderDetailOrderComponent } from '../header-detail-order/header-detail-order.component';
 import { DetailsOrderContainerService } from './details-order-container.service';
-import { OrderImp } from '../interfaces/OrderImp';
-import { HeaderContentImp } from '../interfaces/HeaderContentImp';
+import { OrderImp } from '../../types/OrderImp';
+import { HeaderContentImp } from '../../types/HeaderContentImp';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { DetailDishCardComponent } from '../detail-dish-card/detail-dish-card.component';
+import { ContactInfoComponent } from '../contact-info/contact-info.component';
 
 @Component({
   selector: 'app-details-order-container',
   templateUrl: './details-order-container.component.html',
   styleUrls: ['./details-order-container.component.scss'],
   standalone: true,
-  imports: [HeaderDetailOrderComponent,DetailDishCardComponent,CommonModule,IonicModule]
+  imports: [HeaderDetailOrderComponent,DetailDishCardComponent,ContactInfoComponent,CommonModule,IonicModule]
 })
 export class DetailsOrderContainerComponent  implements OnInit {
 
+  @Output() idOrderEventEmit = new EventEmitter<string>();
   order:OrderImp;
 
   constructor(private detailsOrderContainerService:DetailsOrderContainerService) { }
@@ -24,21 +26,24 @@ export class DetailsOrderContainerComponent  implements OnInit {
     this.getOrder();
   }
 
+  passIdOrder(){
+    this.idOrderEventEmit.emit(this.order.id);
+  }
+
   getOrder(){
     
     this.detailsOrderContainerService.getOrderByID('482e7a44-f81a-4a02-8018-98f835bd3225')
     .subscribe({
-      next: (response:OrderImp)=>  {
-        console.log(typeof response.createdAt);
-        console.log(new Date(response.createdAt))
-        
+      next: (response:OrderImp)=>  {        
         this.order = response;
+        this.passIdOrder();
         this.order.createdAt = new Date(response.createdAt);
         this.order.updatedAt = new Date(response.updatedAt);
 
 
       }
     })
+
   }
 
 

@@ -8,8 +8,8 @@
         <ion-col>
             <app-detail-dish-card></app-detail-dish-card>
         </ion-col>
-        <ion-col>
-            
+        <ion-col size="auto">
+            <app-contact-info *ngIf="order" [name]="order.contact.name" [phoneNumber]="order.contact.phoneNumber" [address]="order.contact.address.streetAddress" [zip]="order.contact.address.zipCode"></app-contact-info>
         </ion-col>
     </ion-row>
 </ion-grid>
