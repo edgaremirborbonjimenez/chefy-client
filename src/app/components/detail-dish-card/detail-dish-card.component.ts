@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { DishImp } from '../interfaces/DishImp';
+import { DishImp } from '../../types/DishImp';
 
 @Component({
   selector: 'app-detail-dish-card',

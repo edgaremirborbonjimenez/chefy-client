@@ -8,5 +8,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-details-order-container></app-details-order-container>
+  <app-details-order-container (idOrderEventEmit)="setIdOrder($event)"></app-details-order-container>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="acceptOrder()" fill="solid" color="light" >Accept<ion-icon name="checkmark-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="rejectOrder()" fill="solid" color="medium">Reject<ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-content>

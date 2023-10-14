@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { HeaderContentImp } from '../interfaces/HeaderContentImp';
+import { HeaderContentImp } from '../../types/HeaderContentImp';
 import { Timestamp } from 'rxjs';
 import { HeaderDetailOrderService } from './header-detail-order.service';
 

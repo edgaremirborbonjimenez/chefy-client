@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderCardLiComponent } from '../order-card-li/order-card-li.component';
 import { OrdersListService } from './orders-list.service'
-import { OrderImp } from 'src/app/components/interfaces/OrderImp';
 import { CommonModule } from '@angular/common';
+import { OrderImp } from 'src/app/types/OrderImp';
 
 @Component({
   selector: 'app-orders-list',
@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class OrdersListComponent  implements OnInit {
 
-  //orders:OrderImp[] = [];
   orders:OrderImp[];
 
   i:number = 1;

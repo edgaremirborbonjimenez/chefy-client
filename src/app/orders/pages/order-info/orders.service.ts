@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OrderImp } from 'src/app/components/interfaces/OrderImp';
+import { OrderImp } from 'src/app/types/OrderImp';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { SearchOrdersParamsDTO } from '../order-request-dto/search-orders';
-import { UpdateOrderDTO } from '../order-request-dto/update-order';
+import { SearchOrdersParamsDTO } from 'src/app/types/search-orders';
+import { UpdateOrderDTO } from 'src/app/types/update-order';
 
 @Injectable({
   providedIn: 'root'

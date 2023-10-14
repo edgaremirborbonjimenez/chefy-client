@@ -1,5 +1,5 @@
 import { Timestamp } from "rxjs";
-import { Address } from "./AddressImp";
+import { AddressImp } from "./AddressImp";
 
 export interface Contact{
     _id?: string;
@@ -7,5 +7,5 @@ export interface Contact{
     updatedAt?: Timestamp<Date>;
     name:string;
     phoneNumber:string;
-    address?: Address
+    address: AddressImp
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { OrderImp } from '../interfaces/OrderImp';
-import { HeaderContentImp } from '../interfaces/HeaderContentImp';
+import { OrderImp } from '../../types/OrderImp';
+import { HeaderContentImp } from '../../types/HeaderContentImp';
 import { environment } from '../../../environments/environment';
 
 
